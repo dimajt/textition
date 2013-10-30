@@ -16,23 +16,23 @@ The initialization code can be inserted into container <code>\<head></code> or <
 <li><a href="http://code.jquery.com/jquery-1.10.2.min.js">download jQuery</a></li>
 </ul>
 
-<h2>Использование</h2>
-Подключите метод <b>textition()</b> к объекту содержащему текст для преобразования
+<h2>Usage</h2>
+Add method <b>textition()</b> to the object that contains text for transition.
 <pre>
 $(document).ready(function() {
    $('#example').textition(); 
 });
 </pre>
-Текст нужно заключать в тег <code>\<span></code>. Их количество зависит от потребностей пользователя
+The text must be enclosed in tag <code>\<span></code>. Their number depends on the user's needs.
 <pre>
 &lt;div id="example"&gt;
    &lt;span&gt;First text&lt;/span&gt;
    &lt;span&gt;Second text&lt;/span&gt;
    &lt;span&gt;Third text&lt;/span&gt;
 &lt;/div&gt;   
-</pre>                    
-Так как контейнер <b>example</b> содержит три <code>\<span></code> элемента, текст будет появлятся в трех вариантах, последовательно заменяя друг друга.
+</pre>
 
+Because the container <b>example</b> has three <code>\<span></code> elements, text will be appearing in three variants, sequentially replace each other.
 
 <h2>Customization</h2>
 <b>textition.js</b> has the following options
@@ -50,7 +50,7 @@ $(document).ready(function() {
   </tr>
   <tr>
   	<td>distance</td>
-      <td>Радиус смещения букв</td>
+      <td>Radius letters offsets</td>
       <td>1 - 1000</td>
   </tr>
   <tr>
@@ -59,7 +59,7 @@ $(document).ready(function() {
       <td>x, y, xy</td>
   </tr>
 </table>
-Пример использование параметров
+Example of the parameters usage
 <pre>
 $(document).ready(function() {
    $('#example').textition({
