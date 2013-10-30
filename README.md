@@ -1,5 +1,8 @@
 <h1>textition.js</h1>
 jQuery plugin for text transitions
+<br>
+<b><a href="http://dimajt.github.io/textition.js/" target="_blank">Demo</a></b>
+
 
 <h2>Initialization</h2>
 To use <b>textition.js</b> you need jQuery library version 1.6 or later.
@@ -12,8 +15,8 @@ The initialization code can be inserted into container <code>\<head></code> or <
 </pre>
 
 <ul>
-<li><a href="js/textition.js">download textition.js</a></li>
-<li><a href="http://code.jquery.com/jquery-1.10.2.min.js">download jQuery</a></li>
+<li><a href="js/textition.js" target="_blank">download textition.js</a></li>
+<li><a href="http://code.jquery.com/jquery-1.10.2.min.js" target="_blank">download jQuery</a></li>
 </ul>
 
 <h2>Usage</h2>
