@@ -15,15 +15,18 @@
 		// ---------------
 		
 		// options
-        var data = $.extend({
-			speed:       0.5,             // animation speed in seconds
-			distance:    1000,            // transition distance, can be set for each axis: [50, 150, 100]
-			animation:   'ease-in-out', // ease, ease-in, ease-out, ease-in-out, linear
-			handler:     'click',       // all events
-			axis:        'z',           // axises: ['x', 'y', 'z']
-			perspective: 300,			// perspectve in pixels
-			autoplay:    true,          // true or false
-			intrval:     500			// autoplay interval
+        var data = $.extend({			
+			map: {
+				x: 100,
+				y: 50,
+				z: 1000
+			},
+			speed:       1,
+			animation:   'ease',
+			handler:     'click',			
+			perspective: 300,
+			autoplay:    false,
+			interval:    3
 		}, options);
 		
 		
@@ -33,13 +36,7 @@
 			letters,
 			index = 0,
 			position = {},
-			prefix = [
-				'-webkit-', 
-				'-moz-', 
-				'-ms-', 
-				'-o-',
-				''
-			];		
+			playing;
 		
 		
 		
@@ -63,25 +60,13 @@
 			var span = child.first();
 			position.top = span.offset().top - div.offset().top;
 			position.left = span.offset().left - div.offset().left;
+			position.width = span.width();
 		}
 		
-		
-		var setAxis = function() {
-			if (!data.distance.length) {
-				var val = data.distance;
-				data.distance = [];
-				for (var i = 0; i < 3; i++) {
-					data.distance[i] = val;
-				}				
-			}			
-			if (data.distance.length == 2) {
-				data.distance[2] = 0;
-			}
-		}
 		
 		// random distance
-		var val = function(axis) {			
-			return Math.round(Math.random() * data.distance[axis]) - data.distance[axis] / 2;
+		var val = function(val) {			
+			return Math.round(Math.random() * val) - val / 2;
 		}							
 		
 		
@@ -93,16 +78,16 @@
 		// hide letters
 		var hide = function() {
 			var x = 0, y = 0, z = 0;				
-			for (var i = 0; i < data.axis.length; i++) {
-				switch(data.axis[i]) {
+			for (var i in data.map) {
+				switch(i) {
 					case 'x':
-						x = val(0)
+						x = val(data.map.x)
 						break						
 					case 'y':
-						y = val(1)
+						y = val(data.map.y)
 						break						
 					case 'z':
-						z = val(2)
+						z = val(data.map.z)
 						break													
 				}
 			}			
@@ -149,7 +134,11 @@
 		
 		
 		// run
-		var run = function() {
+		var run = function(e) {
+			if (data.autoplay && !e.isTrigger) {
+				clearInterval(playing)
+				playing = setInterval(play, data.interval * 1000);
+			}
 			disappear(child[index]);
 			appear(child[index]);			
 		}
@@ -174,9 +163,10 @@
 				          '-o-transition': 'opacity ' + data.speed + 's ' + data.animation,
 				             'transition': 'opacity ' + data.speed + 's ' + data.animation,
 				               'position': 'absolute',
-				                'display': 'block',				
+				                'display': 'block',
+								  'width': position.width,
 				                   'left': position.left,
-				                    'top':  position.top				
+				                    'top': position.top
 			});
 		}
 		
@@ -231,7 +221,7 @@
 		// draw
 		var draw = function() {
 			var other = child.not(':first');
-			other.css('opacity', 0);
+			other.hide().css('opacity', 0);
 			
 			divStyle();
 			child.each(createLetters);			
@@ -239,7 +229,12 @@
 			
 			letters = div.find('l');
 			letters.each(letterStyle);
-			other.children().each(hide);
+			other.show().children().each(hide);
+		}
+		
+		// play
+		var play = function() {
+			div.trigger(data.handler);
 		}
 		
 		
@@ -247,10 +242,12 @@
 		var init = function() {
 			var time = new Date();
 			getPosition();
-			setAxis();
 			draw();
 			div.bind(data.handler, run);
-			//play();
+			
+			if (data.autoplay) {
+				playing = setInterval(play, data.interval * 1000);
+			}			
 		}
 		
 		
