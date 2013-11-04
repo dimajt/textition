@@ -2,135 +2,146 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>textition.js - jQuery plugin for text transitions</title>
-<script src="js/jquery.js"></script>
-<script src="js/textition.js"></script>
+<title>textition.js</title>
 <style>
 html {
-	position:relative;
 	height:100%;
 	width:100%;
-	min-width:1000px;
-	min-height:600px;
 }
 body {
-	position:absolute;
-	top:0; left:0; right:0; bottom:0;
 	margin:0;
-	background:#FFF;
-	font-family:Arial, Helvetica, sans-serif;
+	font-family:"Cordia New";
 }
-h1 {
-	font-weight:normal;
-	font-size:36px;
-	margin:0;
-}
-h2 {
-	font-weight:normal;
-	margin:0;
-	font-size:16px;
-}
-nav {
-	position:absolute;
-	top:0; left:0; bottom:0;
-	width:80px;
-	background:#222222;
-	padding:20px 0 20px 0;
-}
-nav a {
-	display:block;
+header {
+	margin:0 auto;
+	width:1000px;
 	position:relative;
 	text-align:center;
-	margin:0 0 24px 0;
-	padding:36px 0 0 0;
-	font-size:11px;
-	color:#555;
-	background-position:top center;
-	background-repeat:no-repeat;
-	cursor:pointer;
 }
-nav #home     {background-image:url(images/home.png);}
-nav #exampels {background-image:url(images/exampels.png);}
-nav #docs     {background-image:url(images/docs.png);}
-nav #download {background-image:url(images/download.png);}
-
-nav #home:hover,     nav #home.active     {background-image:url(images/home_active.png);}
-nav #exampels:hover, nav #exampels.active {background-image:url(images/exampels_active.png);}
-nav #docs:hover,     nav #docs.active     {background-image:url(images/docs_active.png);}
-nav #download:hover, nav #download.active {background-image:url(images/download_active.png);}
-
-nav a:hover, nav a.active {
-	color:#447FAF;
-}
-nav a:hover {
-}
-nav a.active:before {
-	content:'';
+header div {
 	position:absolute;
-	right:0; top:10px;
-	width: 0; 
-	height: 0; 
-	border-top: 8px solid transparent;
-	border-bottom: 8px solid transparent; 	
-	border-right:8px solid #418FD8; 
+	top:40px;
 }
-
-nav a span {
-	display:block;
-	color:#555;
-	font-size:11px;
-	font-weight:bold;
+header div:first-child {
+	left:0;
+}
+header div:last-child {
+	right:0;
+}
+header div a {
+	display:inline-block;
+	margin:0 10px 0 10px;
+}
+header div a img {
+	height:36px;
+}
+header h1 {
+	font-weight:normal;
+	font-size:96px;
+	margin:50px 0 8px 0;
+	line-height:60px;
+	color:#333;
+}
+header h2 {
+	font-weight:normal;
+	font-size:24px;
+	margin:0;
+	color:#333;
+}
+nav {
+	width:1000px;
+	margin:60px auto 0;	
+	border-top:1px dashed #CCC;
+	border-bottom:1px dashed #CCC;
+	text-align:center;
+}
+nav a {
+	color:#000;
+	text-decoration:none;
+	font-size:28px;
+	display:inline-block;
+	width:140px;
+	margin:0 50px 0 50px;
+	padding:4px 0 4px 0;
+	color:#666;
 }
 section {
-	position:absolute;
-	top:0; left:80px; bottom:0;
-	right:0;
-	background:#418FD8;
-	color:#FFF;
-	padding:20px 40px 40px 40px;
-	overflow:auto;
+	width:800px;
+	margin:60px auto 0;
+	font-size:24px;
+	line-height:24px;
+	color:#111;
 }
-section h1 {
-	font-weight:normal;
-	text-transform:uppercase;
-	font-size:48px;
+section p {
+	margin:0;
 }
-section h2 {
-	font-weight:normal;
-	font-size:12px;
+section h3 {
+	margin:60px 0 10px 0;
+	font-size:46px;
+	line-height:46px;
+}
+section pre {
+	color:#333;
+	white-space:pre;
 }
 </style>
 </head>
 
-<body>    
+<body>
+
+	<!-- header -->
+	<header>
+    	<div>
+        	<a href="#"><img src="images/github.png"></a>
+            <a href="#"><img src="images/jquery.png"></a>
+            <a href="#"><img src="images/download.png"></a>
+        </div>
+        
+        <h1>textition.js</h1>
+        <h2>jQuery plugin for text transitions</h3>
+        
+    	<div>
+        	<a href="#"><img src="images/google_plus.png"></a>
+            <a href="#"><img src="images/twitter.png"></a>
+            <a href="#"><img src="images/facebook.png"></a>
+        </div>        
+    </header>
+    
+    
+    
+    <!-- nav -->
     <nav>
-    	<a id="home" class="active">Home</a>
-    	<a id="exampels">Examples</a>
-        <a id="docs">Docs</a>
-        <a id="download">Download</a>
+    	<a href="#">About</a>
+        <a href="#">Documentation</a>
+		<a href="#">Examples</a>		
     </nav>
     
+    
+    
+    <!-- nav -->
     <section>
-    	<h1>textition.js</h1>
-        <h2>jQuery plugin for text transitions</h2>
-        <article>
-        	<h3>Initialization
-            To use textition.js you need jQuery library version 1.6 or later. 
-			The initialization code can be inserted into container <head> or <body>.
-            <script type="text/javascript" src="js/jquery.js"></script>
-			<script type="text/javascript" src="js/textition.js"></script>
-            Usage
-            Add method textition() to the object that contains text for transition.
-            $(document).ready(function() {
-  		 	$('#example').textition(); 
-			});
-			The text must be enclosed in tag <span>. Their number depends on the user's needs.
-        </article>        
+    	<p>Textition.js is jQuery plugin for smooth transitions between different text. You can use it to stylize your buttons or like beautiful text gallery</p>
+        
+        <h3>Initialization</h3>
+        <p>To use textition.js you need jQuery library version 1.6 or later.</p>
+		<p>The initialization code can be inserted into container head or body.</p>
+        <pre>
+			<script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/textition.js"></script>        
+        </pre>
+        <ul>
+        	<li><a href="#">download textition.js</a></li>
+            <li><a href="#">download jQuery</a></li>
+        </ul>
     </section>
     
+    
+    
+    <!-- footer -->
     <footer>
-    	Dima Karpov &copy; 2013
-    </footer>
+    </footer>    
+    
+    
     
 </body>
 </html>
