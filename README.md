@@ -15,7 +15,7 @@ The initialization code can be inserted into container <code>\<head></code> or <
 </pre>
 
 <ul>
-<li><a href="js/textition.js" target="_blank">download textition.js</a></li>
+<li><a href="http://dimajt.github.io/textition.js/js/textition.js" target="_blank">download textition.js</a></li>
 <li><a href="http://code.jquery.com/jquery-1.10.2.min.js" target="_blank">download jQuery</a></li>
 </ul>
 
