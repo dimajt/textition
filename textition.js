@@ -1,110 +1,258 @@
-(function($){
-   $.fn.textition = function(options){       
-      
-		var span = $('span', this),
-		first = 0,
-		last = span.size(),
-		height = this.height(),
-		width = this.width(),
-		transition,
-		transform,
-        option = $.extend({
-			speed: 0.5,
-			distance: 100,
-			animation: 'ease',
-			axis: 'xy'
+
+/* * * * * * * * * * * * * * * * * * * * * * *
+ * textition.js v1.0.2
+ * https://github.com/dimajt/textition.js
+ * Dima Karpov (c) 2013
+ * * * * * * * * * * * * * * * * * * * * * * */
+
+(function($) {
+	$.fn.textition = function(options) {
+		
+		
+		
+		// ----------------
+		// VARS
+		// ---------------
+		
+		// options
+        var data = $.extend({			
+			map: {
+				x: 100,
+				y: 50,
+				z: 1000
+			},
+			speed:       1,
+			animation:   'ease',
+			handler:     'click',			
+			perspective: 300,
+			autoplay:    false,
+			interval:    3
 		}, options);
 		
-		browser();//detect browser
 		
-		span.css('opacity', 0)
-		.each(function(i) {
-			var t = '';
-			var s = $(this).html().split('');
-
-			$.each(s, function(i) {
-				if (s[i] == ' ') {
-					t += '<a>&nbsp;</a>';
-				}
-				else {
-					t += '<a>'+s[i]+'</a>';				
-				}
-			});
-			
-			$(this).html(t).css({
-				'position': 'absolute',
-				'top': 0,
-				'left': 0,
-				'height': '100%',
-				'width': '100%'
-			});
-			if (i !== 0) disappear(i);
-						
-        }).first().css('opacity', 1);
+		// vars
+		var div = this,
+			child = this.children(),
+			letters,
+			index = 0,
+			position = {},
+			playing;
 		
-		setTimeout(timeout, 10);//hide transition on start (Opera, Firefox)
 		
-		$('a', span).css({
-			'display': 'inline-block',			
-			transition: transform+' '+option.speed+'s '+option.animation
-		});			
-
-		this.css({
-			'position': 'relative',
-			'height' : height,
-			'width' : width
-		}).live('click', textition);
-		 
-		function textition() {			
-			disappear(first);
-			first++;
-			if (first > last-1 ) first = 0;			
-			appear(first);			
-			return false;
+		
+		// ----------------
+		// UTILITY
+		// ---------------
+		
+		// filter text
+		var filter = function(val) {
+			switch(val) {
+				case ' ':
+					return '&nbsp;'
+					
+				default:
+					return val
+			}			
+		}	
+		
+		// get position
+		var getPosition = function() {
+			var span = child.first();
+			position.top = span.offset().top - div.offset().top;
+			position.left = span.offset().left - div.offset().left;
+			position.width = span.width();
 		}
 		
-		function disappear(n) {
-			span.eq(n).css('opacity', 0).children().each(function() {
-				var x = 0, y = 0;
-				if (option.axis == 'xy') {
-					x = rand();
-					y = rand();
+		
+		// random distance
+		var val = function(val) {			
+			return Math.round(Math.random() * val) - val / 2;
+		}							
+		
+		
+		
+		// ----------------
+		// BIND
+		// ---------------
+		
+		// hide letters
+		var hide = function() {
+			var x = 0, y = 0, z = 0;				
+			for (var i in data.map) {
+				switch(i) {
+					case 'x':
+						x = val(data.map.x)
+						break						
+					case 'y':
+						y = val(data.map.y)
+						break						
+					case 'z':
+						z = val(data.map.z)
+						break													
 				}
-				else {
-					if (option.axis == 'x') {
-						x = rand();
-					}
-					else {
-						y = rand();
-					}
-				}
-				$(this).css(transform, 'translate('+x+'px, '+y+'px)');
+			}			
+			$(this).css({
+				'-webkit-transform': 'translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)',
+				   '-moz-transform': 'translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)',
+			 	    '-ms-transform': 'translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)',
+				     '-o-transform': 'translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)',
+				        'transform': 'translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)'
 			});			
 		}
 		
-		function appear(n) {
-			span.eq(n).css('opacity', 1).children().css(transform, 'translate(0, 0)');
-		}		
-		
-		function rand() {
-			var m = Math.random();
-			var r = m * option.distance;
-			if (m < 0.5) r *= -1;
-			return r;			
+		// disappear
+		var disappear = function(span) {
+			$(span)
+			.css('opacity', 0)
+			.children()
+			.each(hide);
+			
+			index++;
+			if (index > child.length - 1) {
+				index = 0;
+			}			
 		}
 		
-		function browser() {
-			var t;			
-			if ($.browser.msie)    t = '-ms-';
-			if ($.browser.webkit)  t = '-webkit-';
-			if ($.browser.opera)   t = '-o-';
-			if ($.browser.mozilla) t = '-moz-';
-			transform = t + 'transform';
-			transition = t + 'transition';
+		// show
+		var show = function() {
+			$(this).css({
+				'-webkit-transform': 'translate3d(0px, 0px, 0px)',
+				   '-moz-transform': 'translate3d(0px, 0px, 0px)',
+				    '-ms-transform': 'translate3d(0px, 0px, 0px)',
+				     '-o-transform': 'translate3d(0px, 0px, 0px)',
+				        'transform': 'translate3d(0px, 0px, 0px)'
+			});			
 		}
 		
-		function timeout() {
-			span.css(transition, 'opacity '+option.speed+'s '+option.animation);
+		// appear
+		var appear = function(span) {
+			$(span)
+			.css('opacity', 1)
+			.children()
+			.each(show);
 		}
-   };
-})(jQuery);
+		
+		
+		// run
+		var run = function(e) {
+			if (data.autoplay && !e.isTrigger) {
+				clearInterval(playing)
+				playing = setInterval(play, data.interval * 1000);
+			}
+			disappear(child[index]);
+			appear(child[index]);			
+		}
+
+
+		// ----------------
+		// CSS
+		// ---------------	
+
+
+		// child style
+		var childStyle = function() {
+			$(this).css({
+				'-webkit-transform-style': 'preserve-3d',
+				   '-moz-transform-style': 'preserve-3d',
+				    '-ms-transform-style': 'preserve-3d',
+				     '-o-transform-style': 'preserve-3d',
+				        'transform-style': 'preserve-3d',
+				     '-webkit-transition': 'opacity ' + data.speed + 's ' + data.animation,
+				        '-moz-transition': 'opacity ' + data.speed + 's ' + data.animation,
+				         '-ms-transition': 'opacity ' + data.speed + 's ' + data.animation,
+				          '-o-transition': 'opacity ' + data.speed + 's ' + data.animation,
+				             'transition': 'opacity ' + data.speed + 's ' + data.animation,
+				               'position': 'absolute',
+				                'display': 'block',
+								  'width': position.width,
+				                   'left': position.left,
+				                    'top': position.top
+			});
+		}
+		
+		
+		// div style
+		var divStyle = function() {
+			var pos = div.css('position');
+			div.css({
+				'-webkit-perspective': data.perspective + 'px',
+				   '-moz-perspective': data.perspective + 'px',
+				    '-ms-perspective': data.perspective + 'px',
+				     '-o-perspective': data.perspective + 'px',
+				        'perspective': data.perspective + 'px',
+						   'position': (pos === 'static') ? 'relative' : pos,
+				             'height': div.height()				
+			});
+		}
+				
+		
+		//	letter style
+		var letterStyle	= function() {
+			$(this).css({
+				'-webkit-transition': '-webkit-transform ' + data.speed + 's ' + data.animation,
+				   '-moz-transition':    '-moz-transform ' + data.speed + 's ' + data.animation,
+				    '-ms-transition':     '-ms-transform ' + data.speed + 's ' + data.animation,
+				     '-o-transition':      '-o-transform ' + data.speed + 's ' + data.animation,
+				        'transition':         'transform ' + data.speed + 's ' + data.animation,
+				           'display':         'inline-block'
+			})
+		}
+		
+		
+		
+		// ----------------
+		// INITIALIZATION
+		// ---------------	
+				
+		
+		// create letters
+		var createLetters = function() {
+			
+			var span = $(this);
+			var text = span.text();
+			var code = '';			
+
+			for (var i = 0; i < text.length; i++) {
+				code += '<l>' + filter(text[i]) + '</l>';
+			}		
+			span.html(code);
+		}
+		
+		// draw
+		var draw = function() {
+			var other = child.not(':first');
+			other.hide().css('opacity', 0);
+			
+			divStyle();
+			child.each(createLetters);			
+			child.each(childStyle);			
+			
+			letters = div.find('l');
+			letters.each(letterStyle);
+			other.show().children().each(hide);
+		}
+		
+		// play
+		var play = function() {
+			div.trigger(data.handler);
+		}
+		
+		
+		// init
+		var init = function() {
+			var time = new Date();
+			getPosition();
+			draw();
+			div.bind(data.handler, run);
+			
+			if (data.autoplay) {
+				playing = setInterval(play, data.interval * 1000);
+			}			
+		}
+		
+		
+		// Run		
+		init();		
+
+	}
+})(jQuery)
