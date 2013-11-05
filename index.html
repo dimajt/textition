@@ -3,88 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>textition.js</title>
-<style>
-html {
-	height:100%;
-	width:100%;
-}
-body {
-	margin:0;
-	font-family:"Cordia New";
-}
-header {
-	margin:0 auto;
-	width:1000px;
-	position:relative;
-	text-align:center;
-}
-header div {
-	position:absolute;
-	top:40px;
-}
-header div:first-child {
-	left:0;
-}
-header div:last-child {
-	right:0;
-}
-header div a {
-	display:inline-block;
-	margin:0 10px 0 10px;
-}
-header div a img {
-	height:36px;
-}
-header h1 {
-	font-weight:normal;
-	font-size:96px;
-	margin:50px 0 8px 0;
-	line-height:60px;
-	color:#333;
-}
-header h2 {
-	font-weight:normal;
-	font-size:24px;
-	margin:0;
-	color:#333;
-}
-nav {
-	width:1000px;
-	margin:60px auto 0;	
-	border-top:1px dashed #CCC;
-	border-bottom:1px dashed #CCC;
-	text-align:center;
-}
-nav a {
-	color:#000;
-	text-decoration:none;
-	font-size:28px;
-	display:inline-block;
-	width:140px;
-	margin:0 50px 0 50px;
-	padding:4px 0 4px 0;
-	color:#666;
-}
-section {
-	width:800px;
-	margin:60px auto 0;
-	font-size:24px;
-	line-height:24px;
-	color:#111;
-}
-section p {
-	margin:0;
-}
-section h3 {
-	margin:60px 0 10px 0;
-	font-size:46px;
-	line-height:46px;
-}
-section pre {
-	color:#333;
-	white-space:pre;
-}
-</style>
+<link href="css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -121,18 +40,50 @@ section pre {
     <!-- nav -->
     <section>
     	<p>Textition.js is jQuery plugin for smooth transitions between different text. You can use it to stylize your buttons or like beautiful text gallery</p>
+        <p>Browser support: IE 10, Firefox 4, Safari 3.1, Opera 10.5</p>
         
         <h3>Initialization</h3>
         <p>To use textition.js you need jQuery library version 1.6 or later.</p>
 		<p>The initialization code can be inserted into container head or body.</p>
-        <pre>
-			<script type="text/javascript" src="js/jquery.js"></script>
-            <script type="text/javascript" src="js/textition.js"></script>        
-        </pre>
+        <code>
+			<p>&lt;script type="text/javascript" src="js/jquery.js">&lt;/script></p>
+            <p>&lt;script type="text/javascript" src="js/textition.js">&lt;/script></p>
+        </code>
         <ul>
         	<li><a href="#">download textition.js</a></li>
             <li><a href="#">download jQuery</a></li>
-        </ul>
+        </ul>        
+        
+        <h3>Usage</h3>
+        <p>Add method textition() to the object that contains text for transition.</p>
+        <code>
+            <p>$(document).ready(function() {</p>
+            <p>&emsp;$('#example').textition();</p>
+            <p>});</p>
+        </code>
+        <p>The text must be enclosed in tag <span>. Their number depends on the user's needs.</p>
+        <code>
+            <p>&lt;div id="example"></p>
+            <p>&emsp;&lt;span>First text&lt;/span></p>
+            <p>&emsp;&lt;span>Second text&lt;/span></p>
+            <p>&emsp;&lt;span>Third text&lt;/span></p>
+            <p>&lt;/div></p>
+        </code>        
+        <p>Because the container example has three <span> elements, text will be appearing in three variants, sequentially replace each other.</span>
+        
+        <h3>Customization</h3>
+        <p>textition.js has the some options. You can learn it in documentation section</p>
+		<p>Example of the parameters usage</p>
+        <code>
+            <p>$(document).ready(function() {</p>
+            <p>&emsp;$('#example').textition({</p>
+            <p>&emsp;&emsp;speed: 2,</p>
+            <p>&emsp;&emsp;animation: 'ease',</p>
+            <p>&emsp;&emsp;distance: 100,</p>
+            <p>&emsp;&emsp;axis: 'x'</p>
+            <p>&emsp;});</p>
+            <p>});</p>
+        </code>        
     </section>
     
     

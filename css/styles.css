@@ -1,0 +1,104 @@
+html {
+	height:100%;
+	width:100%;
+}
+body {
+	margin:0;
+	font-family:"Cordia New";
+	background:url(images/bg.png);
+}
+a {
+	text-decoration:none;
+	color:#09F;
+}
+header {
+	margin:0 auto;
+	width:1000px;
+	position:relative;
+	text-align:center;
+}
+header div {
+	position:absolute;
+	top:16px;
+}
+header div:first-child {
+	left:100px;
+}
+header div:last-child {
+	right:100px;
+}
+header div a {
+	display:inline-block;
+	margin:0 10px 0 10px;
+}
+header div a img {
+	height:24px;
+}
+header h1 {
+	font-weight:normal;
+	font-size:96px;
+	margin:0;
+	padding:50px 0 8px 0;
+	line-height:60px;
+	color:#333;
+}
+header h2 {
+	font-weight:normal;
+	font-size:24px;
+	margin:0;
+	color:#333;
+}
+nav {
+	width:1000px;
+	margin:60px auto 0;	
+	border-top:1px dashed #CCC;
+	border-bottom:1px dashed #CCC;
+	text-align:center;
+}
+nav a {
+	color:#000;
+	text-decoration:none;
+	font-size:28px;
+	display:inline-block;
+	width:140px;
+	margin:0 50px 0 50px;
+	padding:4px 0 4px 0;
+	color:#666;
+}
+section {
+	width:800px;
+	margin:60px auto 0;	
+	color:#111;
+	padding:0 0 20px 0;
+}
+section p {
+	margin:0;
+	font-size:24px;
+	line-height:24px;	
+}
+section h3 {
+	margin:60px 0 10px 0;
+	font-size:46px;
+	line-height:46px;
+}
+section code {
+	display:block;
+	background:rgba(0,0,0,.02);
+	border:1px solid #EEE;
+	color:#777;
+	padding:10px 20px 10px 20px;
+	margin:20px 0 20px 0;
+}
+section code p {
+	font-size:12px;
+	line-height:18px;
+}
+section ul {
+	margin:0;
+	padding:0 0 0 20px;
+	color:#09F;
+}
+section ul li a {
+	font-size:24px;
+	line-height:24px;
+}
