@@ -84,8 +84,8 @@ section h3 {
 section code {
 	display:block;
 	background:rgba(0,0,0,.02);
-	border:1px solid #EEE;
-	color:#777;
+	border:1px dashed #CCC;
+	color:#666;
 	padding:10px 20px 10px 20px;
 	margin:20px 0 20px 0;
 }
@@ -102,3 +102,28 @@ section ul li a {
 	font-size:24px;
 	line-height:24px;
 }
+footer {
+	width:1000px;
+	margin:20px auto 0;
+	border-top:1px dashed #CCC;
+	text-align:center;
+	padding:40px 0 40px 0;
+}
+footer p {
+	text-align:center;
+	font-size:32px;
+	line-height:32px;
+	font-weight:bold;
+	margin:0;
+	color:#999;
+}
+footer a {
+	text-align:center;
+	font-size:24px;
+	line-height:24px;
+	margin:0;
+	color:#666;
+}
+
+
+
