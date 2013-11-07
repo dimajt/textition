@@ -181,7 +181,8 @@
 				     '-o-perspective': data.perspective + 'px',
 				        'perspective': data.perspective + 'px',
 						   'position': (pos === 'static') ? 'relative' : pos,
-				             'height': div.height()				
+				             'height': div.height(),
+							  'width': div.width()
 			});
 		}
 				

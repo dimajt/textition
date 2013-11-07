@@ -63,7 +63,13 @@ nav a {
 	width:140px;
 	margin:0 50px 0 50px;
 	padding:4px 0 4px 0;
-	color:#666;
+	color:#999;
+}
+nav a:hover {
+	color:#444;
+}
+nav a.active {
+	color:#000;
 }
 section {
 	width:800px;
@@ -102,27 +108,45 @@ section ul li a {
 	font-size:24px;
 	line-height:24px;
 }
+section table {
+	border-collapse:collapse;
+	width:100%;
+	font-size:22px;
+	margin:10px 0 0 0;
+}
+section table tr td {
+	border:1px solid #CCC;
+	padding:4px 10px 4px 10px;
+}
+section table tr td:first-child {
+	background:rgba(0,0,0,.02);
+	width:180px;
+}
+section table tr:last-child td:last-child {
+	font-family:"Courier New", Courier, monospace;
+	font-size:12px;
+	line-height:18px;
+	color:#666;
+}
 footer {
 	width:1000px;
 	margin:20px auto 0;
 	border-top:1px dashed #CCC;
 	text-align:center;
 	padding:40px 0 40px 0;
+	color:#666;
 }
 footer p {
 	text-align:center;
-	font-size:32px;
-	line-height:32px;
-	font-weight:bold;
-	margin:0;
-	color:#999;
+	font-size:24px;
+	line-height:24px;
+	margin:0;	
 }
 footer a {
 	text-align:center;
-	font-size:24px;
-	line-height:24px;
+	font-size:20px;
+	line-height:20px;
 	margin:0;
-	color:#666;
 }
 
 
