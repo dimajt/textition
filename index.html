@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <title>textition.js</title>
 <link href="css/styles.css" rel="stylesheet" />
+<script src="js/jquery.js"></script>
+<script src="js/textition.js"></script>
+<script src="js/scripts.js"></script>
 </head>
 
 <body>
@@ -11,18 +14,23 @@
 	<!-- header -->
 	<header>
     	<div>
-        	<a href="#"><img src="images/github.png"></a>
-            <a href="#"><img src="images/jquery.png"></a>
-            <a href="#"><img src="images/download.png"></a>
+        	<a id="github" href="https://github.com/dimajt/textition.js" target="_blank"></a>
+            <a id="jquery" href="http://code.jquery.com/jquery-2.0.3.min.js" target="_blank"></a>
+            <a id="download" href="js/textition.js" target="_blank"></a>
         </div>
         
         <h1>textition.js</h1>
-        <h2>jQuery plugin for text transitions</h3>
+        
+        <span>
+            <h2>jQuery plugin for text transitions</h2>
+            <h2>CSS3 text transitions</h2>
+            <h2>Make your words beautiful</h2>
+        </span>
         
     	<div>
-        	<a href="#"><img src="images/google_plus.png"></a>
-            <a href="#"><img src="images/twitter.png"></a>
-            <a href="#"><img src="images/facebook.png"></a>
+        	<a id="googleplus" href="https://plus.google.com/share?url=http://dimajt.github.io/textition.js/"></a>
+            <a id="twitter" href="https://twitter.com/intent/tweet?text=textition.js - jQuery plugin for text transitions&url=http://dimajt.github.io/textition.js/"></a>
+            <a id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://dimajt.github.io/textition.js/"></a>
         </div>        
     </header>
     
@@ -30,62 +38,14 @@
     
     <!-- nav -->
     <nav>
-    	<a class="active" href="#">About</a>
-        <a href="#">Documentation</a>
-		<a href="#">Examples</a>		
+    	<a href="#about">About</a>
+        <a href="#docs">Documentation</a>
+		<a href="#demos">Examples</a>		
     </nav>
+
     
-    
-    
-    <!-- nav -->
+    <!-- section -->
     <section>
-    	<p>Textition.js is jQuery plugin for smooth transitions between different text. You can use it to stylize your buttons or like beautiful text gallery</p>        
-        
-        <h3>Initialization</h3>
-        <p>To use textition.js you need jQuery library version 1.6 or later.</p>
-		<p>The initialization code can be inserted into container head or body.</p>
-        <code>
-			<p>&lt;script type="text/javascript" src="js/jquery.js">&lt;/script></p>
-            <p>&lt;script type="text/javascript" src="js/textition.js">&lt;/script></p>
-        </code>
-        <ul>
-        	<li><a href="#">download textition.js</a></li>
-            <li><a href="#">download jQuery</a></li>
-        </ul>        
-        
-        <h3>Usage</h3>
-        <p>Add method textition() to the object that contains text for transition.</p>
-        <code>
-            <p>$(document).ready(function() {</p>
-            <p>&emsp;$('#example').textition();</p>
-            <p>});</p>
-        </code>
-        <p>The text must be enclosed in tag <span>. Their number depends on the user's needs.</p>
-        <code>
-            <p>&lt;div id="example"></p>
-            <p>&emsp;&lt;span>First text&lt;/span></p>
-            <p>&emsp;&lt;span>Second text&lt;/span></p>
-            <p>&emsp;&lt;span>Third text&lt;/span></p>
-            <p>&lt;/div></p>
-        </code>        
-        <p>Because the container example has three <span> elements, text will be appearing in three variants, sequentially replace each other.</span>
-        
-        <h3>Customization</h3>
-        <p>textition.js has the some options. You can learn it in documentation section</p>
-		<p>Example of the parameters usage</p>
-        <code>
-            <p>$(document).ready(function() {</p>
-            <p>&emsp;$('#example').textition({</p>
-            <p>&emsp;&emsp;speed: 2,</p>
-            <p>&emsp;&emsp;animation: 'ease',</p>
-            <p>&emsp;&emsp;distance: 100,</p>
-            <p>&emsp;&emsp;axis: 'x'</p>
-            <p>&emsp;});</p>
-            <p>});</p>
-        </code>
-        
-        <h3>Browser support</h3>
-        <p>IE 10, Firefox 4, Safari 3.1, Opera 10.5, Chrome</p>     
     </section>
     
     
@@ -93,7 +53,7 @@
     <!-- footer -->
     <footer>
 		<p>Dima Karpov &copy; 2013</p>
-		<a href="#">dimakarpov.com</a>
+		<a href="#">dima.io</a>
     </footer>    
     
     

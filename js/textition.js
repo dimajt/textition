@@ -26,7 +26,8 @@
 			handler:     'click',			
 			perspective: 300,
 			autoplay:    false,
-			interval:    3
+			interval:    3,
+			element:     this
 		}, options);
 		
 		
@@ -135,7 +136,7 @@
 		
 		// run
 		var run = function(e) {
-			if (data.autoplay && !e.isTrigger) {
+			if (data.autoplay && e && !e.isTrigger) {
 				clearInterval(playing)
 				playing = setInterval(play, data.interval * 1000);
 			}
@@ -235,7 +236,7 @@
 		
 		// play
 		var play = function() {
-			div.trigger(data.handler);
+			run();
 		}
 		
 		
@@ -244,7 +245,10 @@
 			var time = new Date();
 			getPosition();
 			draw();
-			div.bind(data.handler, run);
+			
+			if (data.handler) {
+				data.element.bind(data.handler, run);
+			}			
 			
 			if (data.autoplay) {
 				playing = setInterval(play, data.interval * 1000);

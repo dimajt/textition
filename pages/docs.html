@@ -1,0 +1,152 @@
+<h3>Speed</h3>
+<p>Number of seconds that textition animation should take to complete.</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>positive numbers</td>
+    </tr>
+    <tr>
+        <td>Defult</td>
+        <td>1</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;speed: 2.3<br>
+            })<br>
+        </td>
+    </tr>
+</table>
+
+<h3>Animation</h3>
+<p>Sets the pace of action within a transition.</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>ease, ease-in, ease-out, ease-in-out, linear</td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>ease</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;animation: 'ease-in-out'<br>
+            })<br>
+        </td>
+    </tr>
+</table> 
+
+<h3>Handler</h3>
+<p>The event handler which start transition.</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>javascript handlers, false</td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>click</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;handler: 'mouseenter mouseleave'<br>
+            })<br>
+        </td>
+    </tr>
+</table>   
+
+<h3>Perspective</h3>
+<p>CSS3 perspective property for axis Z</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>natural numbers</td>
+    </tr>
+    <tr>
+        <td>Defult</td>
+        <td>300</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;perspective: 700<br>
+            })<br>
+        </td>
+    </tr>
+</table>
+
+<h3>Map</h3>
+<p>Transition distance for each axis in pixels</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>natural numbers</td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>x: 100, y: 50, z: 1000</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;map: {<br>
+            &emsp;&emsp;x: 200,<br>
+            &emsp;&emsp;y: 0,<br>
+            &emsp;&emsp;z: 200<br>
+            &emsp;}<br>
+            })<br>
+        </td>
+    </tr>
+</table> 
+
+<h3>Autoplay</h3>
+<p>Automatic text changes</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>true, false</td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>false</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;autoplay: true<br>
+            })<br>
+        </td>
+    </tr>
+</table>
+
+<h3>Interval</h3>
+<p>Interval between automatic text changes</p>
+<table>
+    <tr>
+        <td>Values</td>
+        <td>positive numbers</td>
+    </tr>
+    <tr>
+        <td>Default</td>
+        <td>3</td>
+    </tr>            
+    <tr>
+        <td>Usage</td>
+        <td>
+            $(element).textition({<br>
+            &emsp;autoplay: true,<br>
+            &emsp;interval: 1.5<br>
+            })<br>
+        </td>
+    </tr>
+</table>                                
+

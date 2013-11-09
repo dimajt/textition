@@ -1,0 +1,47 @@
+<p>Textition.js is jQuery plugin for smooth transitions between text blocks. It can be used to stylize titles, menu buttons, or any other text.</p>        
+
+<h3>Initialization</h3>
+<p>To use textition.js you need jQuery library version 1.6 or later.</p>
+<p>The initialization code can be inserted into <i>head</i> or <i>body</i> tag.</p>
+<code>
+    <p>&lt;script type="text/javascript" src="js/jquery.js">&lt;/script></p>
+    <p>&lt;script type="text/javascript" src="js/textition.js">&lt;/script></p>
+</code>
+<ul>
+    <li><a href="../js/textition.js" target="_blank">textition.js</a></li>
+    <li><a href="../js/textition.min.js" target="_blank">textition.min.js</a></li>
+    <li><a href="http://code.jquery.com/jquery-2.0.3.min.js" target="_blank">jQuery 2.0.3</a></li>
+</ul>        
+
+<h3>Usage</h3>
+<p>Add method textition() to the object that contains text for transition.</p>
+<code>
+    <p>$(document).ready(function() {</p>
+    <p>&emsp;$('#example').textition();</p>
+    <p>});</p>
+</code>
+<p>The text should be in block element. The number of text blocks is not limited.</p>
+<code>
+    <p>&lt;div id="example"></p>
+    <p>&emsp;&lt;div>First text&lt;/div></p>
+    <p>&emsp;&lt;div>Second text&lt;/div></p>
+    <p>&emsp;&lt;div>Third text&lt;/div></p>
+    <p>&lt;/div></p>
+</code>        
+<p>Because example has three <i>div</i>, text will be appearing in three variants, replace each other step by step.</span>
+
+<h3>Customization</h3>
+<p>Textition.js has some options. You can get acquainted with them in <a href="#docs">documentation</a>.</p>
+<p>Example of the parameters usage:</p>
+<code>
+    <p>$(document).ready(function() {</p>
+    <p>&emsp;$('#example').textition({</p>    
+	<p>&emsp;&emsp;handler: 'mouseenter',</p>
+    <p>&emsp;&emsp;animation: 'ease-in-out',</p>
+	<p>&emsp;&emsp;speed: 1</p>	
+    <p>&emsp;});</p>
+    <p>});</p>
+</code>
+
+<h3>Browser support</h3>
+<p>Chrome 4.0, Safari 3.1, Firefox 4, Opera 10.5, Internet Explorer 10</p>     
