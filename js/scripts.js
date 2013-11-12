@@ -14,6 +14,62 @@
 	
 	
 	
+	// -------------------
+	// demos
+	// -------------------
+		
+	var demos = function() {
+		
+		$('#axis-x').textition({
+			map: {
+				x: 100,
+				y: 0,
+				z: 0
+			}
+		})		
+		
+		$('#autoplay').textition({
+			speed: 1,
+			animation: 'ease-out',
+			map: {
+				x: 200,
+				y: 100,
+				z: 0
+			},
+			autoplay: true,
+			interval: 1.5
+		})
+		
+		$('#axis-z').textition({
+			speed: 0.5,
+			map: {
+				x: 0,
+				y: 0,
+				z: 100
+			},
+			perspective: 30
+		})
+		
+        $('#buttons a').each(function() {
+            $(this).textition({
+				speed: 0.7,
+                handler: 'mouseenter mouseleave'
+            })
+        });
+		
+		$('#sliding').textition({
+			speed: 0.5,
+			animation: 'ease-out',
+			map: {
+				x: 0,
+				y: 40,
+				z: 0
+			},
+			element: $('#arrow-next')
+		})								
+	}
+		
+	
 	
 	// -------------------
 	// utility
@@ -70,6 +126,9 @@
 				section.fadeIn(speed, function() {
 					restore(data.hash);
 				});
+				if (data.hash === '#demos') {
+					demos();
+				}				
 			});
 				
 		})

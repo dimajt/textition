@@ -1,17 +1,4 @@
 <!-- axis x -->
-
-<script>
-    $(function() {
-		$('#axis-x').textition({
-			map: {
-				x: 100,
-				y: 0,
-				z: 0
-			}
-		})
-    });
-</script>
-
 <h3>Axis X</h3>
 <div id="axis-x">
 	<p>Click this text to start textition</p>
@@ -26,23 +13,6 @@
 
 
 <!-- autoplay -->
-
-<script>
-    $(function() {
-		$('#autoplay').textition({
-			speed: 1,
-			animation: 'ease-out',
-			map: {
-				x: 200,
-				y: 100,
-				z: 0
-			},
-			autoplay: true,
-			interval: 1.5
-		})
-    });
-</script>
-
 <h3>Autoplay</h3>
 <div id="autoplay">
 	<p>First text</p>
@@ -61,22 +31,6 @@
 
 
 <!-- axis z -->
-
-<script>
-    $(function() {
-		$('#axis-z').textition({
-			speed: 0.5,
-			map: {
-				x: 0,
-				y: 0,
-				z: 100
-			},
-			perspective: 30
-		})
-    });
-	
-</script>
-
 <h3>Axis Z</h3>
 <div id="axis-z">
 	<p>First text</p>
@@ -94,18 +48,6 @@
 
 
 <!-- menu buttons -->
-
-<script>
-    $(function() {
-        $('#buttons a').each(function() {
-            $(this).textition({
-				speed: 0.7,
-                handler: 'mouseenter mouseleave'
-            })
-        });
-    });
-</script>
-
 <h3>Menu buttons</h3>
 <div id="buttons">
     <a>
@@ -133,22 +75,6 @@
 
 
 <!-- text sliding -->
-
-<script>
-    $(function() {
-		$('#sliding').textition({
-			speed: 0.5,
-			animation: 'ease-out',
-			map: {
-				x: 0,
-				y: 40,
-				z: 0
-			},
-			element: $('#arrow-next')
-		})
-    });
-</script>
-
 <h3>Click on element</h3>
 <div id="sliding">
 	<p>With CSS3, we can add an effect when changing from one style to another, without using Flash animations or JavaScripts.</p>

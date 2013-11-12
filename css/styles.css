@@ -1,13 +1,19 @@
 
 html {height:100%; width:100%;}
-body {margin:0; font-family:"Cordia New"; background:url(../images/bg.png); min-height:100%; position:relative;}
+body {margin:0; font-family:"Cordia New"; background:url(../images/bg.png); min-height:100%; position:relative; overflow:scroll; overflow-x:hidden;}
 a    {text-decoration:none; color:#09F;}
 
 
 
-header     {margin:0 auto; width:1000px; position:relative; text-align:center;}
+header     {margin:0 auto; width:1000px; position:relative; text-align:center; z-index:1;}
 header h1  {font-weight:normal; font-size:96px; margin:0; padding:50px 0 8px 0; line-height:60px; color:#333;}
-header h2  {font-weight:normal; font-size:24px; margin:0; color:#333;}
+header h2  {font-weight:normal; font-size:24px; margin:0; color:#333; 
+	-webkit-user-select:none; 
+	   -moz-user-select:none; 
+	    -ms-user-select:none; 
+	     -o-user-select:none; 
+	        user-select:none;
+}
 header div {position:absolute; top:16px;}
 header span {display:block;}
 
@@ -47,7 +53,7 @@ header div a:hover:before {opacity:0;}
 
 
 
-nav          {width:1000px; margin:60px auto 0; border-top:1px dashed #CCC; border-bottom:1px dashed #CCC; text-align:center;}
+nav          {width:1000px; margin:60px auto 0; border-top:1px dashed #CCC; border-bottom:1px dashed #CCC; text-align:center; z-index:2;}
 nav a        {text-decoration:none; font-size:28px; display:inline-block; width:140px; margin:0 50px 0 50px; padding:4px 0 4px 0;}
 nav a.active {color:#000;}
 
