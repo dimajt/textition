@@ -23,8 +23,12 @@
 	var getData = function() {
 		var data = {};
 		data.hash = (win.location.hash !== '') ? win.location.hash : '#about',
-		data.url = 'pages/' + data.hash.substring(1) + '.html'
+		data.url = getUrl(data.hash);
 		return data;
+	}
+	
+	var getUrl = function(val) {
+		return 'pages/' + val.substring(1) + '.html'
 	}
 	
 	// restore hashchanges
@@ -62,11 +66,12 @@
 		
 		$(win).unbind('hashchange');		
 		section.fadeOut(speed, function() {
-			section
-				.load(data.url)
-				.fadeIn(speed, function() {
+			section.load(data.url, function() {
+				section.fadeIn(speed, function() {
 					restore(data.hash);
 				});
+			});
+				
 		})
 		addClass(data.hash);
 		return false;
@@ -97,10 +102,7 @@
 		nav.each(function(i, e) {
 			var name = $(e).attr('href');
             $.ajax({
-				url: 'pages/' + name.substring(1) + '.html',
-				success: function() {
-					console.log(name + ' load')
-				}
+				url: getUrl(name)
 			});
         });
 	}
