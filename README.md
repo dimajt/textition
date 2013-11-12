@@ -1,13 +1,15 @@
 <h1>textition.js</h1>
-jQuery plugin for text transitions
+Textition.js is jQuery plugin for smooth transitions between text blocks. 
 <br>
-<b><a href="http://dimajt.github.io/textition.js/" target="_blank">Demo</a></b>
+It can be used to stylize titles, menu buttons, or any other text.
+<br>
+<b><a href="http://dimajt.github.io/textition.js/#demos" target="_blank">Demo</a></b>
 
 
 <h2>Initialization</h2>
-To use <b>textition.js</b> you need jQuery library version 1.6 or later.
+To use textition.js you need jQuery library version 1.6 or later.
 <br>
-The initialization code can be inserted into container <code>\<head></code> or <code>\<body></code>.
+The initialization code can be inserted into <i>head</i> or body tag.
 
 <pre>
 &lt;script type="text/javascript" src="js/jquery.js"&gt;&lt;/script&gt;
@@ -15,18 +17,19 @@ The initialization code can be inserted into container <code>\<head></code> or <
 </pre>
 
 <ul>
-<li><a href="http://dimajt.github.io/textition.js/js/textition.js" target="_blank">download textition.js</a></li>
-<li><a href="http://code.jquery.com/jquery-1.10.2.min.js" target="_blank">download jQuery</a></li>
+<li><a href="http://dimajt.github.io/textition.js/js/textition.js" target="_blank">textition.js</a></li>
+<li><a href="http://dimajt.github.io/textition.js/js/textition.min.js" target="_blank">textition.min.js</a></li>
+<li><a href="http://code.jquery.com/jquery-1.10.2.min.js" target="_blank">jQuery 1.10.2</a></li>
 </ul>
 
 <h2>Usage</h2>
-Add method <b>textition()</b> to the object that contains text for transition.
+Add method textition() to the object that contains text for transition.
 <pre>
 $(document).ready(function() {
    $('#example').textition(); 
 });
 </pre>
-The text must be enclosed in tag <code>\<span></code>. Their number depends on the user's needs.
+The text should be in block element. The number of text blocks is not limited.
 <pre>
 &lt;div id="example"&gt;
    &lt;span&gt;First text&lt;/span&gt;
@@ -35,43 +38,21 @@ The text must be enclosed in tag <code>\<span></code>. Their number depends on t
 &lt;/div&gt;   
 </pre>
 
-Because the container <b>example</b> has three <code>\<span></code> elements, text will be appearing in three variants, sequentially replace each other.
+Because example has three <i>div</i>, text will be appearing in three variants, replace each other step by step.
 
 <h2>Customization</h2>
-<b>textition.js</b> has the following options
-<table>
-    <tr>
-  	<td>speed</td>
-      <td>text transition speed in seconds</td>
-      <td>0.1 - 1000</td>
-  </tr>
-
-  <tr>
-  	<td>animation</td>
-      <td>animation type</td>
-      <td>ease, ease-in, ease-out, ease-in-out, linear</td>
-  </tr>
-  <tr>
-  	<td>distance</td>
-      <td>Radius letters offsets</td>
-      <td>1 - 1000</td>
-  </tr>
-  <tr>
-  	<td>axise</td>
-      <td>translate axise</td>
-      <td>x, y, xy</td>
-  </tr>
-</table>
-Example of the parameters usage
+Textition.js has some options. You can get acquainted with them in <a href="http://dimajt.github.io/textition.js/#docs" target="_blank">documentation.</a>
+<br>
+Example of the parameters usage:
 <pre>
 $(document).ready(function() {
    $('#example').textition({
-      speed: 2,
-      animation: 'ease',
-      distance: 100,
-      axis: 'x'
-   }); 
-});                     
+      handler: 'mouseenter',
+      animation: 'ease-in-out',
+      speed: 1
+   });
+});                  
 </pre>
 
-Browser support: IE 10, Firefox 4, Safari 3.1, Opera 10.5
+<h2>Browser support</h2>
+Chrome 4.0, Safari 3.1, Firefox 4, Opera 10.5, Internet Explorer 10
