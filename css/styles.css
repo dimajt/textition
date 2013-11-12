@@ -58,11 +58,11 @@ nav a        {text-decoration:none; font-size:28px; display:inline-block; width:
 nav a.active {color:#000;}
 
 nav a {
-	-webkit-transition:color 4s ease;
-	   -moz-transition:color 4s ease;
-	    -ms-transition:color 4s ease;
-	     -o-transition:color 4s ease;
-	        transition:color 1s ease;	
+	-webkit-transition:color 1s ease;
+	   -moz-transition:color 1s ease;
+	    -ms-transition:color 1s ease;
+	     -o-transition:color 1s ease;
+	        transition:color 1s ease;
 }
 
 
@@ -81,7 +81,13 @@ section table tr td                       {border:1px solid #CCC; padding:4px 10
 section table tr td:first-child           {background:rgba(0,0,0,.02); width:180px;}
 section table tr:last-child td:last-child {font-family:"Courier New", Courier, monospace; font-size:12px; line-height:18px; color:#666;}
 
-
+section {
+	-webkit-transition:opacity 0.25s ease;
+	   -moz-transition:opacity 0.25s ease;
+	    -ms-transition:opacity 0.25s ease;
+	     -o-transition:opacity 0.25s ease;
+	        transition:opacity 0.25s ease;	
+}
 
 article {
 	margin:20px 0 0 0;

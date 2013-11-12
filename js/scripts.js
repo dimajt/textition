@@ -91,7 +91,7 @@
 	var restore = function(h) {
 		win.location.hash = h;
 		setTimeout(function() {
-			$(win).bind('hashchange', change);
+			$(win).bind('hashchange', change);			
 		}, speed / 10);
 	}
 	
@@ -103,8 +103,7 @@
 			else $(e).removeClass();
 		});
 	}
-	
-	
+
 	
 	// -------------------
 	// handlers
@@ -114,13 +113,24 @@
 	var share = function() {
 		win.open(this.href, '', params);
 		return false;
-	}	
+	}
 	
 	// hashchange
 	var change = function() {
 		var data = getData();
 		
-		$(win).unbind('hashchange');		
+		$(win).unbind('hashchange');
+		section.css('opacity', 0);
+		setTimeout(function() {
+			section.load(data.url, function() {
+				if (data.hash === '#demos') demos();
+				section.css('opacity', 1);
+				setTimeout(function() {
+					restore(data.hash);			
+				}, speed)
+			});			
+		}, speed);
+		/*
 		section.fadeOut(speed, function() {
 			section.load(data.url, function() {
 				section.fadeIn(speed, function() {
@@ -132,6 +142,7 @@
 			});
 				
 		})
+		*/
 		addClass(data.hash);
 		return false;
 	}
