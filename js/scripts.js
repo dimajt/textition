@@ -130,19 +130,6 @@
 				}, speed)
 			});			
 		}, speed);
-		/*
-		section.fadeOut(speed, function() {
-			section.load(data.url, function() {
-				section.fadeIn(speed, function() {
-					restore(data.hash);
-				});
-				if (data.hash === '#demos') {
-					demos();
-				}				
-			});
-				
-		})
-		*/
 		addClass(data.hash);
 		return false;
 	}
