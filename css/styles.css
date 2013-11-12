@@ -89,37 +89,6 @@ section {
 	        transition:opacity 0.25s ease;	
 }
 
-article {
-	margin:20px 0 0 0;
-	display:table;
-	border-collapse:collapse;
-	width:100%;
-}
-article > div {
-	display:table-cell;
-	border:1px solid #CCC;
-	width:50%;
-}
-article > div b {
-	display:block;
-	background:rgba(0,0,0,.02);
-	border-bottom:1px solid #CCC;
-	padding:0 10px 0 10px;
-	font-size:24px;
-	font-weight:normal;
-	text-align:center;
-}
-article > div span {
-	display:block;
-	padding:10px;
-}
-article > div span p {
-	font-family:"Courier New", Courier, monospace;
-	font-size:12px;
-	line-height:18px;
-	color:#666;	
-}
-
 
 
 footer   {width:1000px; border-top:1px dashed #CCC; text-align:center; padding:40px 0 40px 0; color:#666; position:absolute; bottom:0; left:50%; margin-left:-500px;}

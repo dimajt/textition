@@ -20,6 +20,7 @@
 		
 	var demos = function() {
 		
+		// axis x
 		$('#axis-x').textition({
 			map: {
 				x: 100,
@@ -28,6 +29,7 @@
 			}
 		})		
 		
+		// autoplay
 		$('#autoplay').textition({
 			speed: 1,
 			animation: 'ease-out',
@@ -40,6 +42,7 @@
 			interval: 1.5
 		})
 		
+		// axis z
 		$('#axis-z').textition({
 			speed: 0.5,
 			map: {
@@ -50,6 +53,7 @@
 			perspective: 30
 		})
 		
+		// menu buttons
         $('#buttons a').each(function() {
             $(this).textition({
 				speed: 0.7,
@@ -57,6 +61,7 @@
             })
         });
 		
+		// handler on element
 		$('#sliding').textition({
 			speed: 0.5,
 			animation: 'ease-out',
