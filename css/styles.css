@@ -1,0 +1,92 @@
+
+html {height:100%; width:100%;}
+body {margin:0; font-family:"Cordia New"; background:url(../images/bg.png); min-height:100%; position:relative; overflow:scroll; overflow-x:hidden;}
+a    {text-decoration:none; color:#09F;}
+
+
+
+header     {margin:0 auto; width:1000px; position:relative; text-align:center; z-index:1;}
+header h1  {font-weight:normal; font-size:96px; margin:0; padding:50px 0 8px 0; line-height:60px; color:#333;}
+header h2  {font-weight:normal; font-size:24px; margin:0; color:#333; 
+	-webkit-user-select:none; 
+	   -moz-user-select:none; 
+	    -ms-user-select:none; 
+	     -o-user-select:none; 
+	        user-select:none;
+}
+header span {display:block;}
+
+
+
+nav          {width:1000px; margin:60px auto 0; border-top:1px dashed #CCC; border-bottom:1px dashed #CCC; text-align:center; z-index:2;}
+nav a        {text-decoration:none; font-size:28px; display:inline-block; width:140px; margin:0 50px 0 50px; padding:4px 0 4px 0;}
+nav a.active {color:#000;}
+
+nav a {
+	-webkit-transition:color 1s ease;
+	   -moz-transition:color 1s ease;
+	    -ms-transition:color 1s ease;
+	     -o-transition:color 1s ease;
+	        transition:color 1s ease;
+}
+
+
+
+section         {width:800px; margin:60px auto 0; color:#111; padding:0 0 200px 0;}
+section i {color:#666; font-size:22px;}
+section p       {margin:0; font-size:24px; line-height:24px;}
+section h3      {margin:60px 0 10px 0; font-size:46px; line-height:46px;}
+section code    {display:block; background:rgba(0,0,0,.02); border:1px dashed #CCC; color:#666; padding:10px 20px 10px 20px; margin:20px 0 20px 0;}
+section code p  {font-size:12px; line-height:18px;}
+section ul      {margin:0; padding:0 0 0 20px; color:#09F;}
+section ul li a {font-size:24px; line-height:24px;}
+
+section {
+	-webkit-transition:opacity 0.25s ease;
+	   -moz-transition:opacity 0.25s ease;
+	    -ms-transition:opacity 0.25s ease;
+	     -o-transition:opacity 0.25s ease;
+	        transition:opacity 0.25s ease;	
+}
+
+footer   {width:1000px; border-top:1px dashed #CCC; text-align:center; padding:40px 0 40px 0; color:#666; position:absolute; bottom:0; left:50%; margin-left:-500px;}
+footer p {text-align:center; font-size:24px; line-height:24px; margin:0;}
+footer a {text-align:center; font-size:20px; line-height:20px; margin:0;}
+
+
+
+#buttons a {
+	display:inline-block;
+	background:#333;
+	padding:5px 0 5px 0;
+	font-size:24px;
+	width:120px;
+	text-align:center;
+	margin:0 4px 0 0;
+	overflow:hidden;
+	cursor:pointer;
+}
+#axis-z {
+	width:90px;
+}
+#sliding {
+	display:inline-block;
+	border:3px solid #5F5F5F;
+	border-radius:10px;
+	padding:10px 20px 10px 20px;
+	width:120px;
+	overflow:hidden;
+	width:300px;
+	color:#5F5F5F;
+	vertical-align:middle;	
+}
+#arrow-next {
+	display:inline-block;
+	vertical-align:middle;
+	margin:0 0 0 20px;
+	width:0; 
+	height:0; 
+	border-top:24px solid transparent;
+	border-bottom:24px solid transparent;	
+	border-left:24px solid #5F5F5F;
+}
