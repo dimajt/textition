@@ -91,6 +91,19 @@
 		}	
 		else change();
 	}
+	
+	// preload templates
+	var preload = function() {
+		nav.each(function(i, e) {
+			var name = $(e).attr('href');
+            $.ajax({
+				url: 'pages/' + name.substring(1) + '.html',
+				success: function() {
+					console.log(name + ' load')
+				}
+			});
+        });
+	}
 		
 	// init
 	var init = function() {		
@@ -106,6 +119,7 @@
 			map: {x: 50, y: 20, z: 500},
 		});
 		
+		preload();
 		binding();
 		run();		
 	}
