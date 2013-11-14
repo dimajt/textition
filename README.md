@@ -3,7 +3,7 @@ Textition.js is jQuery plugin for smooth transitions between text blocks.
 <br>
 It can be used to stylize titles, menu buttons, or any other text.
 <br>
-<b><a href="http://dimajt.github.io/textition.js/#demos" target="_blank">Demo</a></b>
+<b><a href="http://dimajt.github.io/textition/#demos" target="_blank">Demo</a></b>
 
 
 <h2>Initialization</h2>
@@ -17,7 +17,7 @@ The initialization code can be inserted into <i>head</i> or body tag.
 </pre>
 
 <ul>
-<li><a href="http://dimajt.github.io/textition.js/js/textition.js" target="_blank">textition.js</a></li>
+<li><a href="http://dimajt.github.io/textition/js/textition.js" target="_blank">textition.js</a></li>
 <li><a href="http://code.jquery.com/jquery-1.10.2.min.js" target="_blank">jQuery 1.10.2</a></li>
 </ul>
 
@@ -40,7 +40,7 @@ The text should be in block element. The number of text blocks is not limited.
 Because example has three <i>div</i>, text will be appearing in three variants, replace each other step by step.
 
 <h2>Customization</h2>
-Textition.js has some options. You can get acquainted with them in <a href="http://dimajt.github.io/textition.js/#docs" target="_blank">documentation.</a>
+Textition.js has some options. You can get acquainted with them in <a href="http://dimajt.github.io/textition/#docs" target="_blank">documentation.</a>
 <br>
 Example of the parameters usage:
 <pre>
