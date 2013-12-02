@@ -3,7 +3,7 @@ Textition.js is jQuery plugin for smooth transitions between text blocks.
 <br>
 It can be used to stylize titles, menu buttons, or any other text.
 <br>
-<b><a href="http://dimajt.github.io/textition/#demos" target="_blank">Demo</a></b>
+<b><a href="http://codepen.io/dimajt/full/mwHKj" target="_blank">Demo</a></b>
 
 
 <h2>Initialization</h2>
