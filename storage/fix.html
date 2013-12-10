@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="http://dimajt.github.io/textition/js/textition.js"></script>
+<style>
+#test {
+	text-align:center;
+	padding:50px;
+}
+</style>
+<script>
+$(function() {
+	$('#test').textition({
+		speed: 1,
+		autoplay: true,
+		interval: 1.5,
+		count: 3
+	});
+});
+</script>
+</head>
+
+<body>
+	<div id="test">
+    	<div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+    </div>
+</body>
+</html>
