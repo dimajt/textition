@@ -27,8 +27,7 @@
 			perspective: 300,
 			autoplay:    false,
 			interval:    3,
-			element:     this,
-			count:       false
+			element:     this
 		}, options);
 		
 		
@@ -138,10 +137,8 @@
 		// run
 		var run = function(e) {
 			if (data.autoplay && e && !e.isTrigger) {
-				if (data.count != 0) {
-					clearInterval(playing)
-					playing = setInterval(play, data.interval * 1000);
-				}
+				clearInterval(playing)
+				playing = setInterval(play, data.interval * 1000);
 			}
 			disappear(child[index]);
 			appear(child[index]);			
@@ -240,12 +237,6 @@
 		// play
 		var play = function() {
 			run();
-			if (data.count) {
-				data.count--;
-				if (data.count == 0) {
-					clearInterval(playing);
-				}
-			}
 		}
 		
 		
