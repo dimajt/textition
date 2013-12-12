@@ -4,17 +4,31 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <style>
+
 @font-face {
-    font-family: font;
-    src: url('font.eot');    
+    font-family: bulletproof;
+    src: url('fonts/yanone.eot');    
+    src: local('Yanone'), url(fonts/yanone.ttf) format("truetype");
 }
-h1 {
-	font-family:font;
+.bulletproof {
+	font-family: bulletproof,Verdana, Arial, Helvetica, sans-serif;
+}
+.example {
+	font-size: 40px;
+	margin-bottom: 30px;
+	color: #999;
+	white-space: pre;
+	margin-top: -10px;
 }
 </style>
 </head>
 
 <body>
-	<h1>Hello world!</h1>
+<p class="example bulletproof">
+@font-face {
+    font-family: bulletproof;
+    src: url('fonts/yanone.eot');    
+    src: local('Yanone'), url(fonts/yanone.ttf) format("truetype");
+}</p>
 </body>
 </html>
