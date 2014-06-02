@@ -184,14 +184,9 @@
 		var divStyle = function() {
 			var pos = div.css('position');
 			div.css({
-				'-webkit-perspective': data.perspective + 'px',
-				   '-moz-perspective': data.perspective + 'px',
-				    '-ms-perspective': data.perspective + 'px',
-				     '-o-perspective': data.perspective + 'px',
-				        'perspective': data.perspective + 'px',
-						   'position': (pos === 'static') ? 'relative' : pos,
-				             'height': div.height(),
-							  'width': div.width()
+				'position': (pos === 'static') ? 'relative' : pos,
+				'height': div.height(),
+				'width': div.width()
 			});
 		}
 				
