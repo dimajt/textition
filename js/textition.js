@@ -156,6 +156,11 @@
 		// child style
 		var childStyle = function() {
 			$(this).css({
+				'-webkit-perspective': data.perspective + 'px',
+				   '-moz-perspective': data.perspective + 'px',
+				    '-ms-perspective': data.perspective + 'px',
+				     '-o-perspective': data.perspective + 'px',
+				        'perspective': data.perspective + 'px',
 				'-webkit-transform-style': 'preserve-3d',
 				   '-moz-transform-style': 'preserve-3d',
 				    '-ms-transform-style': 'preserve-3d',
@@ -168,7 +173,7 @@
 				             'transition': 'opacity ' + data.speed + 's ' + data.animation,
 				               'position': 'absolute',
 				                'display': 'block',
-								  'width': position.width,
+						  'width': position.width,
 				                   'left': position.left,
 				                    'top': position.top
 			});
